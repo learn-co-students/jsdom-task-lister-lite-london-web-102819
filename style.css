@@ -7,11 +7,23 @@ html {
 body {
   min-height: 100%;
   min-width: 100%;
-  background: linear-gradient(pink, violet);
+  background: linear-gradient(rgb(241, 84, 110), rgb(82, 252, 119));
 }
 
 button {
   font-size: 7px;
+}
+
+.low {
+  color: green;
+}
+
+.medium {
+  color: orange;
+}
+
+.high {
+  color: red;
 }
 
 #main-content {

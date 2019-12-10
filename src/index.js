@@ -6,11 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let submit = document.body.querySelector("#submit");
     let text = document.body.querySelector("#new-task-description");
     let node = document.createElement("LI");
-    let string = text.value + " "
-    let textNode = document.createTextNode(string);
+    let textNode = document.createTextNode(text.value + " ");
     let buttonNode = document.createElement("BUTTON")
     buttonNode.innerText = "X"
-    buttonNode.id = string
     node.appendChild(textNode);
     node.appendChild(buttonNode);
     document.body.querySelector("#tasks").appendChild(node);

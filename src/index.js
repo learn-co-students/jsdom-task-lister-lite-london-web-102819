@@ -1,21 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector('#create-task-form');
-  form.addEventListener('submit', submitForm);
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const taskForm = document.querySelector('#create-task-form');
+  taskForm.addEventListener('submit', submitForm);
+})
 
-function submitForm(event) {
-  event.preventDefault();
-  const taskList = document.querySelector('#tasks');
-  const taskInput = document.querySelector('#new-task-description').value
-  const button = document.createElement('button')
-  const li = document.createElement('li');
-  button.innerText = 'X'
-  li.innerText = taskInput
-  li.append(button)
-  button.addEventListener('click', function () { removeLi(li) })
-  taskList.appendChild(li);
+const listContainer = document.querySelector('#list')
+const ul = document.querySelector('#tasks')
+
+const submitForm = (event) => {
+  event.preventDefault()
+  const TaskInput = document.querySelector('#new-task-description').value
+  const deleteButton = document.createElement('button')
+  deleteButton.innerText = 'X'
+
+  const li = document.createElement('li')
+  li.innerText = TaskInput
+  li.appendChild(deleteButton)
+  ul.appendChild(li)
+
+  deleteButton.addEventListener('click', function () { removeLi(li) });
+
 }
 
-function removeLi(li) {
+const removeLi = (li) => {
   li.remove()
 }
+
+
